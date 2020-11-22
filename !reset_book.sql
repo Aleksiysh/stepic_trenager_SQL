@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS `book` (
   `author` varchar(30),
   `price` decimal(8,2),
   `amount` int(11) ,
-  `byu` int(11) ,
   PRIMARY KEY (`book_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
