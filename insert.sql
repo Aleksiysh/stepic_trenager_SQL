@@ -1,0 +1,1 @@
+INSERT INTO `book` (`book_id`, `title`, `author`, `price`, `amount`) VALUES(7,"Черный человек","Есенин С.А.",null,null);
