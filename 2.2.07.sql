@@ -8,10 +8,12 @@
 (эти изменения в таблицы уже внесены).
 */
 
--- select author_id from
--- book
--- group by author_id
--- having count(distinct(genre_id))=1;
+SELECT 
+    author_id
+FROM
+    book
+GROUP BY author_id
+HAVING COUNT(DISTINCT (genre_id)) = 1;
 
 SELECT 
     name_author
