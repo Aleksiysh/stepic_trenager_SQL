@@ -8,8 +8,6 @@ CREATE TABLE IF NOT EXISTS `supply` (
   PRIMARY KEY (`supply_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-/*DELETE FROM `book`;*/
-/*!40000 ALTER TABLE `supply` DISABLE KEYS */;
 INSERT INTO `supply` (`title`, `author`, `price`, `amount`) VALUES
     ("Доктор Живаго","Пастернак Б.Л.","380.80","4"),    
     ('Черный человек', 'Есенин С.А.', 570.20, 6),
@@ -17,5 +15,5 @@ INSERT INTO `supply` (`title`, `author`, `price`, `amount`) VALUES
     ('Идиот', 'Достоевский Ф.М.', 360.80, 3),
     ("Стихотворения и поэмы","Лермонтов М.Ю.",255.90,4),
     ("Остров сокровищ","Стивенсон Р.Л.",599.99,	5);   
-/*!40000 ALTER TABLE `supply` ENABLE KEYS */;
+
 
