@@ -162,3 +162,25 @@ insert into buy_step   (buy_id,step_id, date_step_beg,date_step_end) value
 (	4,	4,	 		null,		null);
 
 
+CREATE TABLE buy_archive (
+    buy_archive_id INT PRIMARY KEY AUTO_INCREMENT,
+    buy_id INT,
+    client_id INT,
+    book_id INT,
+    date_payment DATE,
+    price DECIMAL(8 , 2 ),
+    amount INT,
+    FOREIGN KEY (buy_id)
+        REFERENCES buy (buy_id)
+        ON DELETE SET NULL,
+    FOREIGN KEY (client_id)
+        REFERENCES client (client_id)
+        ON DELETE SET NULL,
+    FOREIGN KEY (book_id)
+        REFERENCES book (book_id)
+        ON DELETE SET NULL
+)  ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;
+
+
+
+
