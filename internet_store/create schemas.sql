@@ -1,0 +1,1 @@
+CREATE SCHEMA `internet_store` ;
