@@ -109,7 +109,7 @@ CREATE TABLE testing   (
     answer_id INT,
     FOREIGN KEY (attempt_id)
         REFERENCES attempt (attempt_id)
-        ON DELETE SET NULL,
+        ON DELETE CASCADE,
         FOREIGN KEY (question_id)
         REFERENCES question (question_id)
         ON DELETE SET NULL,
