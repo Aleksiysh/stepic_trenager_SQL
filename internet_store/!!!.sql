@@ -3,7 +3,6 @@ DROP SCHEMA  IF EXISTS `internet_store`;
 CREATE SCHEMA `internet_store` ;
 use `internet_store`;
 
-#DROP TABLE IF EXISTS `author`;
 CREATE TABLE author (
       author_id INT PRIMARY KEY AUTO_INCREMENT, 
       name_author VARCHAR(50) 
@@ -17,7 +16,6 @@ insert into author (name_author) value
 ("Стивенсон Р.Л.");
 
 
-#DROP TABLE IF EXISTS `genre`;
 CREATE TABLE genre (
       genre_id INT PRIMARY KEY AUTO_INCREMENT, 
       name_genre VARCHAR(50) 
@@ -27,7 +25,6 @@ insert into genre (name_genre) value
 ('Поэзия'),
 ('Приключения');
 
-#DROP TABLE IF EXISTS `book`;
 CREATE TABLE book (
     book_id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(50),
@@ -170,9 +167,9 @@ CREATE TABLE buy_archive (
     date_payment DATE,
     price DECIMAL(8 , 2 ),
     amount INT,
-    FOREIGN KEY (buy_id)
-        REFERENCES buy (buy_id)
-        ON DELETE SET NULL,
+    #FOREIGN KEY (buy_id)
+    #    REFERENCES buy (buy_id)
+    #    ON DELETE SET NULL,
     FOREIGN KEY (client_id)
         REFERENCES client (client_id)
         ON DELETE SET NULL,
@@ -180,6 +177,18 @@ CREATE TABLE buy_archive (
         REFERENCES book (book_id)
         ON DELETE SET NULL
 )  ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;
+
+insert into buy_archive( buy_id , client_id , book_id , date_payment , price  , amount ) value
+(  	2      , 1         , 1       , '2019-02-21'   , 670.60 , 2      ),
+( 	2      , 1         , 3       , '2019-02-21'   , 450.90 , 1      ),
+(  	1      , 2         , 2       , '2019-02-10'   , 520.30 , 2      ),
+(  	1      , 2         , 4       , '2019-02-10'   , 780.90 , 3      ),
+(  	1      , 2         , 3       , '2019-02-10'   , 450.90 , 1      ),
+(  	3      , 4         , 4       , '2019-03-05'   , 780.90 , 4      ),
+(  	3      , 4         , 5       , '2019-03-05'   , 480.90 , 2      ),
+(  	4      , 1         , 6       , '2019-03-12'   , 650.00 , 1      ),
+(  	5      , 2         , 1       , '2019-03-18'   , 670.60 , 2      ),
+( 	5      , 2         , 4       , '2019-03-18'   , 780.90 , 1      );
 
 
 
