@@ -1,5 +1,5 @@
 SELECT 
-    name_program, name_enrollee
+   DISTINCT name_program, name_enrollee
 FROM
     enrollee
         JOIN
@@ -13,5 +13,5 @@ FROM
         AND enrollee_subject.enrollee_id = enrollee.enrollee_id
 WHERE
     result < min_result
-GROUP BY name_program
+#GROUP BY name_program
 ORDER BY 1 , 2;
