@@ -1,0 +1,1 @@
+alter table applicant_order add str_id INT first;
