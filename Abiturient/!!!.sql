@@ -172,5 +172,8 @@ insert into enrollee_subject (enrollee_id,subject_id,result ) value
 (6,3,88),
 (6,4,94);
 
+# для задания 3,3,11
+INSERT INTO enrollee_subject (enrollee_id, subject_id, result) VALUES (2, 3, 41);
+
 
 
