@@ -1,11 +1,14 @@
 DROP SCHEMA  IF EXISTS `lesson_3_5`;
 
 CREATE SCHEMA `lesson_3_5` ;
+
 use `lesson_3_5`;
 
-CREATE TABLE module (module_id INT PRIMARY KEY AUTO_INCREMENT, module_name VARCHAR(64));
-INSERT INTO module (module_name) 
-       VALUES
+CREATE TABLE module (
+module_id INT PRIMARY KEY AUTO_INCREMENT, 
+module_name VARCHAR(64)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;
+INSERT INTO module (module_name) VALUES
         ('Основы реляционной модели и SQL'),
         ('Запросы SQL к связанным таблицам'),
         ('Базы данных и SQL запросы');
@@ -16,7 +19,7 @@ CREATE TABLE lesson (
 			 module_id	int,
 			 lesson_position int,
 			 FOREIGN KEY (module_id)  REFERENCES module (module_id) ON DELETE CASCADE
-);			 
+)ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;			 
 		
 INSERT INTO lesson (lesson_name, module_id, lesson_position)
        VALUES
@@ -44,7 +47,7 @@ CREATE TABLE step(
 			 lesson_id	int,
 			 step_position int,
 			 FOREIGN KEY (lesson_id)  REFERENCES lesson (lesson_id) ON DELETE CASCADE
-);			 
+)ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;			 
 INSERT INTO step (step_name, step_type, lesson_id, step_position)
        VALUES
 		('Структура уроков курса', 'text', 1, 1),
@@ -211,7 +214,7 @@ INSERT INTO step (step_name, step_type, lesson_id, step_position)
 		('Задание. Удаление неактуальных попыток', 'sql', 16, 5),
 		('Запросы пользователей', 'sql', 16, 6);
         
-CREATE TABLE keyword (keyword_id INT PRIMARY KEY AUTO_INCREMENT, keyword_name VARCHAR(16));
+CREATE TABLE keyword (keyword_id INT PRIMARY KEY AUTO_INCREMENT, keyword_name VARCHAR(16))ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;
 INSERT INTO keyword (keyword_name) 
        VALUES
         ('SELECT'),('FROM'),('INNER'),('LEFT'),('RIGHT'),('OUTER'),('JOIN'),('CROSS'),
@@ -226,13 +229,13 @@ CREATE TABLE step_keyword (
     PRIMARY KEY (step_id, keyword_id),
     FOREIGN KEY (step_id)  REFERENCES step (step_id) ON DELETE CASCADE,
     FOREIGN KEY (keyword_id)  REFERENCES keyword (keyword_id) ON DELETE CASCADE
-);        
+)ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;        
         
 INSERT INTO step_keyword 
        VALUES
 (38, 1), (81, 3), (82, 4), (82, 5), (82, 6), (81, 7), (82, 7), (83, 7), (83, 8), (47, 10), (47, 11), (42, 15), (43, 16), (42, 17), (43, 18), (43, 19), (82, 21), (112, 27), (113, 27), (37, 28), (37, 29), (18, 30), (36, 30), (19, 31), (18, 32);
 
-CREATE TABLE student (student_id INT PRIMARY KEY AUTO_INCREMENT, student_name VARCHAR(64));
+CREATE TABLE student (student_id INT PRIMARY KEY AUTO_INCREMENT, student_name VARCHAR(64))ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;
 INSERT INTO student (student_name) 
        VALUES        
 ('student_1'), ('student_2'), ('student_3'), ('student_4'), ('student_5'), ('student_6'), ('student_7'), ('student_8'), ('student_9'), ('student_10'), ('student_11'), ('student_12'), ('student_13'), ('student_14'), ('student_15'), ('student_16'), ('student_17'), ('student_18'), ('student_19'), ('student_20'), ('student_21'), ('student_22'), ('student_23'), ('student_24'), ('student_25'), ('student_26'), ('student_27'), ('student_28'), ('student_29'), ('student_30'), ('student_31'), ('student_32'), ('student_33'), ('student_34'), ('student_35'), ('student_36'), ('student_37'), ('student_38'), ('student_39'), ('student_40'), ('student_41'), ('student_42'), ('student_43'), ('student_44'), ('student_45'), ('student_46'), ('student_47'), ('student_48'), ('student_49'), ('student_50'), ('student_51'), ('student_52'), ('student_53'), ('student_54'), ('student_55'), ('student_56'), ('student_57'), ('student_58'), ('student_59'), ('student_60'), ('student_61'), ('student_62'), ('student_63'), ('student_64');
@@ -246,7 +249,7 @@ CREATE TABLE step_student (
              result VARCHAR(16),
 			 FOREIGN KEY (step_id)  REFERENCES step (step_id) ON DELETE CASCADE,
              FOREIGN KEY (student_id)  REFERENCES student (student_id) ON DELETE CASCADE
-);	
+)ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8;	
 
 INSERT INTO step_student (step_id, student_id, attempt_time, submission_time, result) 
        VALUES  
