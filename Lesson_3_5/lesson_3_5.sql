@@ -95,7 +95,7 @@ INSERT INTO step (step_name, step_type, lesson_id, step_position)
 		('Выборка данных, групповые функции MIN, MAX и AVG', 'sql', 5, 4),
 		('Выборка данных c вычислением, групповые функции', 'sql', 5, 5),
 		('Вычисления по таблице целиком', 'sql', 5, 6),
-		('Выборка данных по условию, групповые функции', 'sql', 5, 7),
+		('Выборка данных по условию, групповые функции, MIN', 'sql', 5, 7),
 		('Выборка данных по условию, групповые функции, WHERE и HAVING', 'sql', 5, 8),
 		('Запросы пользователей', 'sql', 5, 9),
 		('Содержание урока', 'text', 6, 1),
@@ -221,7 +221,7 @@ INSERT INTO keyword (keyword_name)
         ('ON'), ('WHERE'), ('HAVING'), ('GROUP BY'), ('ORDER BY'), ('if'), ('SUM'),('AVG'),
         ('COUNT'), ('MIN'), ('MAX'), ('ROUND'), ('LEFT'), ('CONCAT'), ('DATEDIFF'),
         ('MONTHNAME'), ('YEAR'), ('USING'), ('UNION'), ('ALL'), ('ANY'), ('IN'), ('LIKE'), ('BETWEEN'),
-        ('AND'), ('OR');
+        ('AND'), ('OR'), ('DATE_ADD');
         
 CREATE TABLE step_keyword (
     step_id INT,
